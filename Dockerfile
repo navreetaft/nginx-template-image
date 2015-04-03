@@ -8,4 +8,4 @@ EXPOSE 80 443
 WORKDIR /etc/nginx
 
 ENTRYPOINT ["entrypoint.sh"]
-CMD ["nginx", "-g", "daemon off;"]
+CMD ["nginx"]
