@@ -1,8 +1,4 @@
-FROM dockerfile/ubuntu
-
-RUN add-apt-repository -y ppa:nginx/stable
-RUN apt-get update
-RUN apt-get install -y nginx
+FROM nginx
 
 ADD bin/ /usr/sbin/
 RUN configure-nginx.sh
@@ -12,4 +8,3 @@ EXPOSE 80 443
 WORKDIR /etc/nginx
 
 ENTRYPOINT ["entrypoint.sh"]
-CMD ["nginx"]
